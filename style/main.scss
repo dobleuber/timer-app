@@ -1,0 +1,132 @@
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  font-size: 16px;
+  background-color: #f9f9f9; // Fondo claro para una mejor visualización
+  color: #333; // Texto en un gris oscuro para mejor contraste
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #444; // Color más neutro para el título
+}
+
+.timer-container {
+  margin-bottom: 2rem;
+}
+
+.timer {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #222; // Texto del temporizador más fuerte
+  letter-spacing: 0.1rem;
+}
+
+.rounds-counter {
+  font-size: 4rem;
+  color: #666; // Rounds en un gris suave
+}
+
+.controls {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: center;
+  gap: 1.5rem;
+
+  button {
+    font-size: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #007bff; // Botón azul estándar
+    color: #fff; // Texto blanco
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3; // Azul más oscuro al hover
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
+  }
+
+  .pause {
+    background-color: #ffc107; // Amarillo para pausa
+    &:hover {
+      background-color: #e0a800; // Hover amarillo más oscuro
+    }
+  }
+
+  .reset {
+    background-color: #dc3545; // Rojo para reset
+    &:hover {
+      background-color: #b02a37; // Hover rojo más oscuro
+    }
+  }
+}
+
+.settings form {
+  font-size: 1.5rem;
+  width: 50%;
+  min-width: 400px;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid #ddd; // Color gris claro para el borde
+  border-radius: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff; // Fondo blanco para el formulario
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sutil sombra para destacar el formulario
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
+  }
+
+  input {
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    text-align: right; // Alinear valores a la derecha
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    width: 6rem; // Ancho fijo para los inputs
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  .total-time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+}
