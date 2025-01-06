@@ -5,6 +5,14 @@ use leptos_router::{
     StaticSegment,
 };
 
+mod clock;
+mod controls;
+mod home_page;
+mod rounds;
+mod settings;
+
+use home_page::HomePage;
+
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
@@ -46,72 +54,3 @@ pub fn App() -> impl IntoView {
         </Router>
     }
 }
-
-#[component]
-fn HomePage() -> impl IntoView {
-    view! {
-        <h1>"Tabata Timer!"</h1>
-        <div class="timer-container">
-            <Clock/>
-            <Rounds />
-            <Controls />
-        </div>
-        <div class="settings">
-            <Settings />
-        </div>
-    }
-}
-
-#[component]
-fn Clock() -> impl IntoView {
-    view! {
-        <div class="timer">"00:00"</div>
-    }
-}
-
-#[component]
-fn Rounds() -> impl IntoView {
-    view! {
-        <div class="rounds-counter">"1/8"</div>
-    }
-}
-
-#[component]
-fn Controls() -> impl IntoView {
-    view! {
-        <div class="controls">
-            <button class="start">"Start"</button>
-            <button class="pause">"Pause"</button>
-            <button class="reset">"Reset"</button>
-        </div>
-    }
-}
-
-#[component]
-fn Settings() -> impl IntoView {
-    view! {
-        <div class="settings">
-            <form>
-                <div class="settings-row">
-                    <label for="work-time">"Work Time"</label>
-                    <input type="number" id="work-time" name="work-time" min="1" max="60" value="20"/>
-                </div>
-                <div class="settings-row">
-                    <label for="rest-time">"Rest Time"</label>
-                    <input type="number" id="rest-time" name="rest-time" min="1" max="60" value="10"/>
-                </div>
-                <div class="settings-row">
-                    <label for="rounds">"Rounds"</label>
-                    <input type="number" id="rounds" name="rounds" min="1" max="60" value="8"/>
-                </div>
-                <div class="settings-row">
-                    <label for="prep-time">"Prep Time"</label>
-                    <input type="number" id="prep-time" name="prep-time" min="1" max="60" value="10"/>
-                </div>
-                <div class="total-time">"Total Time: 00:00"</div>
-            </form>
-        </div>
-    }
-}
-
-
